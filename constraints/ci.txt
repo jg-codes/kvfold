@@ -1,0 +1,6 @@
+# Versions the unit tests and the Table 1 rebuild are run with (kvfold 0.1.1).
+# transformers 5.x is not supported yet: under 5.2.0 one unit test that runs
+# the kvpress KVComposePress fails during prefill.
+kvpress==0.5.5
+transformers==4.57.6
+torch==2.14.0

@@ -15,7 +15,7 @@ from .merging_any_press import (
     scatter_add_sorted,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = [
     "COMPENSATIONS", "Compensation", "CompensationResult", "FoldRouting", "KeptSet", "MassFold", "MergingAnyPress",
     "NoCompensation", "install_bias_clearing", "map_scores", "patch_attention_bias", "scatter_add_atomic", "scatter_add_sorted",

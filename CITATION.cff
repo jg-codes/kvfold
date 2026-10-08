@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software or its per-item records, please cite the preprint below. kvpress asks to be cited through its own CITATION.cff."
 title: "kvfold: folding discarded entries back into a compressed KV cache"
 type: software
-version: 0.1.0
+version: 0.1.1
 date-released: "2026-10-08"
 license: Apache-2.0
 repository-code: "https://github.com/jg-codes/kvfold"

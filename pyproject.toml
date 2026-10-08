@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kvfold"
-version = "0.1.0"
+version = "0.1.1"
 description = "Fold discarded KV-cache entries back into the kept ones: a wrapper for any kvpress press"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -17,7 +17,7 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
-dependencies = ["kvpress>=0.5.5,<0.6", "torch>=2.3.1", "transformers>=4.56.0,<5.3"]
+dependencies = ["kvpress>=0.5.5,<0.6", "torch>=2.3.1", "transformers>=4.56.0,<5"]
 
 [project.optional-dependencies]
 table1 = ["numpy>=2.0", "pandas>=2.2"]

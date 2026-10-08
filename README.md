@@ -13,11 +13,11 @@ Use it if you already run a kvpress press at high compression and want to know w
 ## Install
 
 ```
-pip install kvpress
+pip install "kvpress==0.5.5" "transformers>=4.56,<5"
 pip install "kvfold @ git+https://github.com/jg-codes/kvfold"
 ```
 
-kvfold is not on PyPI yet. Tested with kvpress 0.5.5, Python 3.12, PyTorch 2.14 (CPU) and transformers 4.57 (unit tests and the Table 1 rebuild).
+kvfold is not on PyPI yet. Tested with kvpress 0.5.5, Python 3.12, PyTorch 2.14 (CPU) and transformers 4.57 (unit tests and the Table 1 rebuild); the exact CI versions are in `constraints/ci.txt`. transformers 5 is not supported yet: under transformers 5.2 one unit test that runs the kvpress KVComposePress fails during prefill.
 
 ## Use
 
