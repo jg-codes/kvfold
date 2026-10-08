@@ -135,6 +135,10 @@ stats/                   statistics scripts of the registered tests
 
 The code is archived on Zenodo. [10.5281/zenodo.23232929](https://doi.org/10.5281/zenodo.23232929) always resolves to the latest release; [10.5281/zenodo.23232930](https://doi.org/10.5281/zenodo.23232930) is v0.1.1.
 
+## AI assistance
+
+The code, tests and documentation were written with Claude Science (Anthropic), an agentic research environment, under the author's direction. The author reviewed them and is responsible for them.
+
 ## Licence
 
 Apache-2.0 (see `LICENSE` and `NOTICE`). The preprint text is CC BY 4.0. RestoreKV checkpoints and the RULER data keep their own terms.
