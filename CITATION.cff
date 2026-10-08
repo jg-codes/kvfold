@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software or its per-item records, please cite the preprint below. kvpress asks to be cited through its own CITATION.cff."
+title: "kvfold: folding discarded entries back into a compressed KV cache"
+type: software
+version: 0.1.0
+date-released: "2026-10-08"
+license: Apache-2.0
+repository-code: "https://github.com/jg-codes/kvfold"
+authors:
+  - family-names: Gast
+    given-names: Johannes
+    affiliation: "Ingenieurbüro Johannes Gast"
+keywords:
+  - KV cache
+  - kvpress
+  - long-context inference
+  - cache compression
+abstract: "Training-free wrapper for any kvpress press that folds each discarded KV entry into the kept entry with the most similar key. Code, statistics scripts and per-item records of the preprint."
+preferred-citation:
+  type: unpublished
+  title: "Folding discarded entries back into a compressed KV cache: evidence from reconstruction-scored presses on Qwen3-8B and Llama-3.1-8B-Instruct"
+  authors:
+    - family-names: Gast
+      given-names: Johannes
+      affiliation: "Ingenieurbüro Johannes Gast"
+  year: 2026
+  notes: "Preprint, 8 October 2026. The arXiv identifier is added after submission."
+references:
+  - type: software
+    title: "kvpress"
+    authors:
+      - name: "NVIDIA"
+    repository-code: "https://github.com/NVIDIA/kvpress"
+    license: Apache-2.0

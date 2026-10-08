@@ -1,0 +1,31 @@
+{
+  "title": "kvfold: folding discarded entries back into a compressed KV cache (code, statistics scripts and per-item records)",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "language": "eng",
+  "version": "0.1.0",
+  "description": "Training-free wrapper for any kvpress press that folds each discarded KV-cache entry into the kept entry with the most similar key. Contains the wrapper (pip-installable on top of kvpress), the runners and statistics scripts, and the per-item records (ids, arm, score, predicted answer) that rebuild Table 1 of the preprint on a CPU. Benchmark contexts and the RestoreKV checkpoints are not included.",
+  "creators": [
+    {
+      "name": "Gast, Johannes",
+      "affiliation": "Ingenieurbüro Johannes Gast"
+    }
+  ],
+  "keywords": [
+    "KV cache",
+    "kvpress",
+    "long-context inference",
+    "cache compression",
+    "RULER",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/NVIDIA/kvpress",
+      "relation": "requires",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ]
+}

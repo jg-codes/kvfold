@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kvfold"
+version = "0.1.0"
+description = "Fold discarded KV-cache entries back into the kept ones: a wrapper for any kvpress press"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Johannes Gast" }]
+keywords = ["kv cache", "kvpress", "long context", "cache compression", "language models"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["kvpress>=0.5.5,<0.6", "torch>=2.3.1", "transformers>=4.56.0,<5.3"]
+
+[project.optional-dependencies]
+table1 = ["numpy>=2.0", "pandas>=2.2"]
+test = ["pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/jg-codes/kvfold"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

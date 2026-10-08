@@ -1,0 +1,408 @@
+{
+ "tasks_report_order": [
+  "cwe",
+  "fwe",
+  "qa_1",
+  "qa_2",
+  "niah_multikey_1",
+  "niah_multikey_2",
+  "niah_multikey_3",
+  "niah_multiquery",
+  "niah_multivalue",
+  "niah_single_1",
+  "niah_single_2",
+  "niah_single_3",
+  "vt"
+ ],
+ "bootstrap": {
+  "B": 10000,
+  "seed": 20261004,
+  "ci_pct": [
+   2.5,
+   97.5
+  ],
+  "one_sided_lb_pct": 5.0,
+  "unit": "item (paired deltas)",
+  "sensitivity": "task-stratified item bootstrap, same B and seed"
+ },
+ "signflip": {
+  "B_primary": 100000,
+  "B_secondary": 20000,
+  "seed": 20261005,
+  "statistic": "mean of item-level sign-flipped paired deltas",
+  "p_one_sided": "(1 + #{null mean >= observed - 1e-12}) / (B + 1)",
+  "p_two_sided": "same with |.|"
+ },
+ "holm": {
+  "alpha": 0.05,
+  "family": [
+   "linear",
+   "mlp",
+   "kvzip"
+  ],
+  "p": "one-sided item-level sign-flip p of mean(W - A) > 0, B_primary",
+  "missing_operating_point_p": 1.0
+ },
+ "primary_pass": "bootstrap 95% CI lower bound > 0 AND Holm-rejected (family of three, p = 1 for an operating point that is not run)",
+ "g3_shard": {
+  "floor_pp": 3.0,
+  "exact_match_min": 0.5,
+  "abs_effective_cr_diff_max": 0.01,
+  "note": "in-job assertion on the shard's bare arm vs the published per-item predictions (runner G3, assert mode)"
+ },
+ "g3_full": {
+  "abs_pooled_diff_pp_max": 1.0,
+  "exact_match_min": 0.5,
+  "abs_effective_cr_diff_max": 0.01,
+  "scorer": "leaderboard metric; all ids of the operating point"
+ },
+ "registered_sd": {
+  "rule": "R: sd_reg = sqrt((14 s_t^2 + 14 s_o^2)/28), s_o = rms of the 13 smoke task sds; margin = 1.96 sd_reg / sqrt(n)",
+  "source_rows": {
+   "linear": "kvzap_smoke_rows.jsonl (C111)",
+   "mlp": "kvzap_smoke_rows.jsonl (C111)",
+   "kvzip": "c90_smoke_predictions.csv (C90, older fold code, arm C - arm A)"
+  },
+  "smoke_task_sd": {
+   "linear": {
+    "cwe": 28.485585327118898,
+    "fwe": 21.331349114072818,
+    "qa_1": 53.45224838248488,
+    "qa_2": 0.0,
+    "niah_multikey_1": 35.18657752744984,
+    "niah_multikey_2": 35.18657752744984,
+    "niah_multikey_3": 35.18657752744984,
+    "niah_multiquery": 25.81988897471611,
+    "niah_multivalue": 38.34368390280328,
+    "niah_single_1": 0.0,
+    "niah_single_2": 0.0,
+    "niah_single_3": 0.0,
+    "vt": 5.163977794943222
+   },
+   "mlp": {
+    "cwe": 4.140393356054125,
+    "fwe": 16.26500121580889,
+    "qa_1": 0.0,
+    "qa_2": 25.819888974716115,
+    "niah_multikey_1": 25.819888974716118,
+    "niah_multikey_2": 0.0,
+    "niah_multikey_3": 0.0,
+    "niah_multiquery": 0.0,
+    "niah_multivalue": 6.4549722436790296,
+    "niah_single_1": 0.0,
+    "niah_single_2": 0.0,
+    "niah_single_3": 0.0,
+    "vt": 0.0
+   },
+   "kvzip": {
+    "cwe": 6.761234037828133,
+    "fwe": 11.728859175816616,
+    "qa_1": 35.18657752744984,
+    "qa_2": 35.18657752744984,
+    "niah_multikey_1": 35.18657752744984,
+    "niah_multikey_2": 0.0,
+    "niah_multikey_3": 25.819888974716118,
+    "niah_multiquery": 8.79664438186246,
+    "niah_multivalue": 17.59328876372492,
+    "niah_single_1": 0.0,
+    "niah_single_2": 0.0,
+    "niah_single_3": 0.0,
+    "vt": 0.0
+   }
+  },
+  "smoke_pooled_sd": {
+   "linear": 28.216232124071183,
+   "mlp": 11.649837439560986,
+   "kvzip": 20.18751130118848
+  },
+  "smoke_pooled_delta": {
+   "linear": 3.188034188034188,
+   "mlp": 0.8803418803418805,
+   "kvzip": 0.7521367521367522
+  },
+  "rms_task_sd": {
+   "linear": 27.73702749651978,
+   "mlp": 11.288841058227922,
+   "kvzip": 19.515551128695698
+  },
+  "sd_reg": {
+   "linear": {
+    "cwe": 28.11379790931195,
+    "fwe": 24.742363967183383,
+    "qa_1": 42.58218847995927,
+    "qa_2": 19.61304023274686,
+    "niah_multikey_1": 31.68152405139258,
+    "niah_multikey_2": 31.68152405139258,
+    "niah_multikey_3": 31.68152405139258,
+    "niah_multiquery": 26.795609351247837,
+    "niah_multivalue": 33.463269338042785,
+    "niah_single_1": 19.61304023274686,
+    "niah_single_2": 19.61304023274686,
+    "niah_single_3": 19.61304023274686,
+    "vt": 19.950054649165263
+   },
+   "mlp": {
+    "cwe": 8.502375832106859,
+    "fwe": 13.999789230345526,
+    "qa_1": 7.982416064010085,
+    "qa_2": 19.92617122159447,
+    "niah_multikey_1": 19.926171221594473,
+    "niah_multikey_2": 7.982416064010085,
+    "niah_multikey_3": 7.982416064010085,
+    "niah_multiquery": 7.982416064010085,
+    "niah_multivalue": 9.195232436012674,
+    "niah_single_1": 7.982416064010085,
+    "niah_single_2": 7.982416064010085,
+    "niah_single_3": 7.982416064010085,
+    "vt": 7.982416064010085
+   },
+   "kvzip": {
+    "cwe": 14.604297682035615,
+    "fwe": 16.100044618305777,
+    "qa_1": 28.451291481688262,
+    "qa_2": 28.451291481688262,
+    "niah_multikey_1": 28.451291481688262,
+    "niah_multikey_2": 13.79957854169351,
+    "niah_multikey_3": 22.885840628250943,
+    "niah_multiquery": 15.136672161305606,
+    "niah_multivalue": 18.579296883635635,
+    "niah_single_1": 13.79957854169351,
+    "niah_single_2": 13.79957854169351,
+    "niah_single_3": 13.79957854169351,
+    "vt": 13.79957854169351
+   }
+  }
+ },
+ "margins_pp_n500": {
+  "linear": {
+   "cwe": 2.464283038651789,
+   "fwe": 2.168763823982806,
+   "qa_1": 3.732493388418377,
+   "qa_2": 1.7191587752697228,
+   "niah_multikey_1": 2.777008023260567,
+   "niah_multikey_2": 2.777008023260567,
+   "niah_multikey_3": 2.777008023260567,
+   "niah_multiquery": 2.3487387171104324,
+   "niah_multivalue": 2.933184883578524,
+   "niah_single_1": 1.7191587752697228,
+   "niah_single_2": 1.7191587752697228,
+   "niah_single_3": 1.7191587752697228,
+   "vt": 1.7486993913344744
+  },
+  "mlp": {
+   "cwe": 0.7452661009690171,
+   "fwe": 1.2271356312771045,
+   "qa_1": 0.6996896177974641,
+   "qa_2": 1.746605916605182,
+   "niah_multikey_1": 1.7466059166051824,
+   "niah_multikey_2": 0.6996896177974641,
+   "niah_multikey_3": 0.6996896177974641,
+   "niah_multiquery": 0.6996896177974641,
+   "niah_multivalue": 0.8059976599967446,
+   "niah_single_1": 0.6996896177974641,
+   "niah_single_2": 0.6996896177974641,
+   "niah_single_3": 0.6996896177974641,
+   "vt": 0.6996896177974641
+  },
+  "kvzip": {
+   "cwe": 1.28012313332243,
+   "fwe": 1.4112311329266056,
+   "qa_1": 2.493865654588054,
+   "qa_2": 2.493865654588054,
+   "niah_multikey_1": 2.493865654588054,
+   "niah_multikey_2": 1.2095863906589048,
+   "niah_multikey_3": 2.0060323783862275,
+   "niah_multiquery": 1.3267878139076734,
+   "niah_multivalue": 1.6285471755936036,
+   "niah_single_1": 1.2095863906589048,
+   "niah_single_2": 1.2095863906589048,
+   "niah_single_3": 1.2095863906589048,
+   "vt": 1.2095863906589048
+  }
+ },
+ "margins_pp_n15": {
+  "linear": {
+   "cwe": 14.227544757250392,
+   "fwe": 12.521363775851952,
+   "qa_1": 21.54956062551848,
+   "qa_2": 9.925567816816818,
+   "niah_multikey_1": 16.03306329771239,
+   "niah_multikey_2": 16.03306329771239,
+   "niah_multikey_3": 16.03306329771239,
+   "niah_multiquery": 13.560449305798045,
+   "niah_multivalue": 16.934750821170017,
+   "niah_single_1": 9.925567816816818,
+   "niah_single_2": 9.925567816816818,
+   "niah_single_3": 9.925567816816818,
+   "vt": 10.096120643186936
+  },
+  "mlp": {
+   "cwe": 4.302795840123649,
+   "fwe": 7.084870870500176,
+   "qa_1": 4.039659891845523,
+   "qa_2": 10.08403396120195,
+   "niah_multikey_1": 10.084033961201952,
+   "niah_multikey_2": 4.039659891845523,
+   "niah_multikey_3": 4.039659891845523,
+   "niah_multiquery": 4.039659891845523,
+   "niah_multivalue": 4.653429659653289,
+   "niah_single_1": 4.039659891845523,
+   "niah_single_2": 4.039659891845523,
+   "niah_single_3": 4.039659891845523,
+   "vt": 4.039659891845523
+  },
+  "kvzip": {
+   "cwe": 7.390794356195722,
+   "fwe": 8.147746744839564,
+   "qa_1": 14.398340069991752,
+   "qa_2": 14.398340069991752,
+   "niah_multikey_1": 14.398340069991752,
+   "niah_multikey_2": 6.983550282550265,
+   "niah_multikey_3": 11.581833336643937,
+   "niah_multiquery": 7.660213015171104,
+   "niah_multivalue": 9.40242150216972,
+   "niah_single_1": 6.983550282550265,
+   "niah_single_2": 6.983550282550265,
+   "niah_single_3": 6.983550282550265,
+   "vt": 6.983550282550265
+  }
+ },
+ "noninferiority": {
+  "rule": "per task: one-sided 95% lower bound (5th percentile of the item bootstrap) of the paired delta W - A > -margin_t; intersection-union over the 13 tasks; secondary, not status-bearing for the pooled claim",
+  "retired_uniform_floor_pp_n500": 1.77,
+  "retired_uniform_floor_pp_n15": 10.22,
+  "retired_note": "reported as a reference column only (conventions s4 retired it)"
+ },
+ "kvzip_smoke_kill_rule": {
+  "ids": "item_ids_c80.json (195 ids, 15/task)",
+  "arms": [
+   "A",
+   "C",
+   "C0",
+   "Cperm"
+  ],
+  "kill_if_any": [
+   "a task with mean d < -margin_pp_n15[kvzip][task]",
+   "pooled bootstrap 95% CI upper bound < 0",
+   "pooled mean d <= 0"
+  ],
+  "scorer": "leaderboard metric (runner scorer reported as sensitivity)",
+  "mechanical_stop": "any of G1, G2, G4, G5, SPEC, G6 failing stops the KVzip stage (no full-set run)"
+ },
+ "placebo": {
+  "contrasts": [
+   "C - A",
+   "C - C0",
+   "C - Cperm",
+   "C0 - A",
+   "Cperm - A"
+  ],
+  "B": 10000,
+  "attribution_rule": "value content only if the 95% CI lower bound of both C - C0 and C - Cperm is > 0; 'direction only' if both means are > 0; bias/kernel path if C - C0 <= 0 (mean); weights/bias rather than value content if C - C0 > 0 and C - Cperm <= 0 (mean)",
+  "kvzap_subset": "650 ids (within-task position % 10 == 0 of sig_items_global.json), arms C0 and Cperm",
+  "kvzip_subset": "195 C80 smoke ids, arms C0 and Cperm"
+ },
+ "sizing": {
+  "n": 6500,
+  "paired_sd_smoke": {
+   "linear": 28.216232124071183,
+   "mlp": 11.649837439560986,
+   "kvzip": 20.18751130118848
+  },
+  "se_pp": {
+   "linear": 0.3499792862616667,
+   "mlp": 0.1444984494823371,
+   "kvzip": 0.25039526062595596
+  },
+  "ci95_half_width_pp": {
+   "linear": 0.6859594010728667,
+   "mlp": 0.2832169609853807,
+   "kvzip": 0.4907747108268737
+  },
+  "mde_80pct_power_pp_one_sided_holm_first": {
+   "linear": 1.0392984884826455,
+   "mlp": 0.42910259558274827,
+   "kvzip": 0.7435737659548389
+  },
+  "smoke_delta_pp": {
+   "linear": 3.188034188034188,
+   "mlp": 0.8803418803418805,
+   "kvzip": 0.7521367521367522
+  }
+ },
+ "published_leaderboard_means": {
+  "linear": {
+   "mean": 82.47076923076924,
+   "per_task": {
+    "cwe": 34.54,
+    "fwe": 63.53,
+    "qa_1": 54.4,
+    "qa_2": 45.2,
+    "niah_multikey_1": 97.2,
+    "niah_multikey_2": 90.6,
+    "niah_multikey_3": 91.4,
+    "niah_multiquery": 99.95,
+    "niah_multivalue": 97.7,
+    "niah_single_1": 100.0,
+    "niah_single_2": 100.0,
+    "niah_single_3": 99.4,
+    "vt": 98.2
+   }
+  },
+  "mlp": {
+   "mean": 93.53692307692307,
+   "per_task": {
+    "cwe": 94.98,
+    "fwe": 84.6,
+    "qa_1": 79.0,
+    "qa_2": 59.2,
+    "niah_multikey_1": 99.4,
+    "niah_multikey_2": 99.6,
+    "niah_multikey_3": 99.6,
+    "niah_multiquery": 99.75,
+    "niah_multivalue": 99.85,
+    "niah_single_1": 100.0,
+    "niah_single_2": 100.0,
+    "niah_single_3": 100.0,
+    "vt": 100.0
+   }
+  },
+  "kvzip": {
+   "mean": 92.24,
+   "per_task": {
+    "cwe": 91.34,
+    "fwe": 91.33,
+    "qa_1": 78.0,
+    "qa_2": 58.2,
+    "niah_multikey_1": 94.0,
+    "niah_multikey_2": 99.4,
+    "niah_multikey_3": 97.0,
+    "niah_multiquery": 99.4,
+    "niah_multivalue": 91.85,
+    "niah_single_1": 100.0,
+    "niah_single_2": 99.2,
+    "niah_single_3": 99.4,
+    "vt": 100.0
+   }
+  },
+  "no_press": {
+   "mean": 95.31615384615384,
+   "per_task": {
+    "cwe": 98.94,
+    "fwe": 95.27,
+    "qa_1": 81.6,
+    "qa_2": 63.4,
+    "niah_multikey_1": 100.0,
+    "niah_multikey_2": 100.0,
+    "niah_multikey_3": 100.0,
+    "niah_multiquery": 99.9,
+    "niah_multivalue": 100.0,
+    "niah_single_1": 100.0,
+    "niah_single_2": 100.0,
+    "niah_single_3": 100.0,
+    "vt": 100.0
+   }
+  }
+ },
+ "published_source": "kvpress_leaderboard_frontier.csv (artifact 90da0acc-4117-439d-a5b5-b828b875d405); kvzip row cr_nominal 0.88 = CR 0.875"
+}

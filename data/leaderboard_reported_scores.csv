@@ -1,0 +1,7 @@
+press,cr,pooled,snapshot
+RestoreKV_plus,0.94,86.38,"main e81fc403 2026-10-05 + refs/pr/24, refs/pr/25"
+kvzap_linear,-3.0,82.47,"main e81fc403 2026-10-05 + refs/pr/24, refs/pr/25"
+kvzap_mlp,-3.0,93.54,"main e81fc403 2026-10-05 + refs/pr/24, refs/pr/25"
+kvzip,0.88,92.24,"main e81fc403 2026-10-05 + refs/pr/24, refs/pr/25"
+kvzip,0.97,19.85,"main e81fc403 2026-10-05 + refs/pr/24, refs/pr/25"
+no_press,0.0,95.32,"main e81fc403 2026-10-05 + refs/pr/24, refs/pr/25"

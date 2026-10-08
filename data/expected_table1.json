@@ -1,0 +1,61 @@
+{
+ "RestoreKV_plus, CR 0.9375": {
+  "items": 2600,
+  "published_bare": 86.39,
+  "bare_this_stack": 85.83,
+  "fold": 90.24,
+  "delta": 4.41,
+  "ci_lo": 3.57,
+  "ci_hi": 5.3,
+  "full_cache": 95.21,
+  "gap_closed": 0.47
+ },
+ "KVzap linear, threshold −3": {
+  "items": 6500,
+  "published_bare": 82.47,
+  "bare_this_stack": 82.53,
+  "fold": 87.46,
+  "delta": 4.93,
+  "ci_lo": 4.24,
+  "ci_hi": 5.6,
+  "full_cache": 95.32,
+  "gap_closed": 0.39
+ },
+ "KVzap MLP, threshold −3": {
+  "items": 6500,
+  "published_bare": 93.54,
+  "bare_this_stack": 93.62,
+  "fold": 94.01,
+  "delta": 0.4,
+  "ci_lo": 0.03,
+  "ci_hi": 0.76,
+  "full_cache": 95.32,
+  "gap_closed": 0.23
+ },
+ "KVzip, CR 0.875": {
+  "items": 6500,
+  "published_bare": 92.24,
+  "bare_this_stack": 92.21,
+  "fold": 93.92,
+  "delta": 1.71,
+  "ci_lo": 1.32,
+  "ci_hi": 2.11,
+  "full_cache": 95.32,
+  "gap_closed": 0.55
+ },
+ "KVzip, CR 0.97": {
+  "items": 1300,
+  "published_bare": 19.58,
+  "bare_this_stack": 18.83,
+  "fold": 25.59,
+  "delta": 6.76,
+  "ci_lo": 5.47,
+  "ci_hi": 8.16,
+  "full_cache": 95.11,
+  "gap_closed": 0.09
+ },
+ "_all6500": {
+  "fold": 89.97,
+  "published_bare": 86.38
+ }
+}

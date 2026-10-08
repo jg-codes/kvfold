@@ -1,0 +1,11 @@
+kvfold
+Copyright 2026 Johannes Gast, Ingenieurbüro Johannes Gast.
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+src/kvfold/merging_any_press.py builds on kvpress (https://github.com/NVIDIA/kvpress), Copyright (c) NVIDIA CORPORATION & AFFILIATES, licensed
+under the Apache License, Version 2.0; it imports kvpress classes and keeps the SPDX header of the upstream file it was derived from.
+tests/fixtures.py is taken from kvpress (same licence, SPDX header kept).
+
+Not distributed here: the RULER benchmark data (Hugging Face dataset simonjegou/ruler, no licence stated on its data card), the leaderboard
+prediction files, and the RestoreKV checkpoints (CC BY-NC 4.0 according to their model cards). See README.md.
