@@ -133,6 +133,8 @@ stats/                   statistics scripts of the registered tests
 
 `CITATION.cff` has the same entry. If you use kvpress, cite it through its own `CITATION.cff`.
 
+The code is archived on Zenodo. [10.5281/zenodo.23232929](https://doi.org/10.5281/zenodo.23232929) always resolves to the latest release; [10.5281/zenodo.23232930](https://doi.org/10.5281/zenodo.23232930) is v0.1.1.
+
 ## Licence
 
 Apache-2.0 (see `LICENSE` and `NOTICE`). The preprint text is CC BY 4.0. RestoreKV checkpoints and the RULER data keep their own terms.

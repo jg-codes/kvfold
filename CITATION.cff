@@ -4,6 +4,7 @@ title: "kvfold: folding discarded entries back into a compressed KV cache"
 type: software
 version: 0.1.1
 date-released: "2026-10-08"
+doi: "10.5281/zenodo.23232929"
 license: Apache-2.0
 repository-code: "https://github.com/jg-codes/kvfold"
 authors:
